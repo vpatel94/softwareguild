@@ -1,0 +1,38 @@
+/*
+Name: Vikash Patel
+Date Created: 09/30/2018
+Most Recent Revision: N/A
+*/
+
+header {
+  text-align: center;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 2em;
+  padding: 30px 5px 1px 5px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 5px 10px 5px;
+}
+
+nav a {
+  float:left;
+  margin: 15px;
+}
+
+nav a:link {
+  text-decoration: underline;
+}
+
+nav a:hover {
+  font-weight: bold;
+}
+
+nav a:visited {
+  color: #e4c3ad;
+}
+
+.clear-float {
+  clear:both;
+}

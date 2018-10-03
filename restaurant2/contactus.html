@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<!--
+Name: Vikash Patel
+Date Created: 09/30/2018
+Most Recent Revision: N/A
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="restaurantStyles.css" rel="stylesheet" type="text/css" />
+    <style>
+
+      @import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
+
+      input[type=text] {
+        border: 2px solid #0d1f2d;
+        padding: 8px 8px;
+        box-sizing: border-box;
+      }
+
+      textarea.form-control {
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border: 2px solid #0d1f2d;
+        border-radius: 3px;
+        resize: none;
+      }
+
+    </style>
+  </head>
+    <body>
+      <main>
+        <header><h1>TOP GRUB</h1></header>
+        <hr />
+        <nav>
+          <p><a href="index.html">Home</a></p>
+          <p><a href="menu.html">Menu</a></li></p>
+          <p><a href="contactus.html" style="text-decoration:none;">Contact Us</a></p>
+          <div class="clear-float"></div>
+        </nav>
+        <hr />
+        <section>
+          <div class="container-fluid">
+            <form action="contactus.html" method="POST">
+
+              <!--Name-->
+              <div class="form-group row" style="white-space:nowrap">
+                <div class="col-lg-4">
+                  <div style="text-align:right;"><label for="name" class="col col-form-label"><strong>Name:</strong></label></div>
+                </div>
+                <div class="col-lg-4">
+                  <input type="text" class="form-control" id="name">
+                </div>
+              </div>
+
+              <!--Email-->
+              <div class="form-group row" style="white-space:nowrap">
+                <div class="col-lg-4">
+                  <div style="text-align:right;"><label for="email" class="col col-form-label"><strong>Email:</strong></label></div>
+                </div>
+                <div class="col-lg-4">
+                  <input type="text" class="form-control" id="email">
+                </div>
+              </div>
+
+              <!--Phone Number-->
+              <div class="form-group row" style="white-space:nowrap">
+                <div class="col-lg-4">
+                  <div style="text-align:right;"><label for="phone" class="col  col-form-label"><strong>Phone Number:</strong></label></div>
+                </div>
+                <div class="col-lg-4">
+                  <input type="text" class="form-control" id="phone">
+                </div>
+              </div>
+
+              <!--Inquiry-->
+              <div class="form-group row" style="white-space:nowrap">
+                <div class="col-lg-4">
+                  <div style="text-align:right;"><label for="inquiry" class="col col-form-label"><strong>Reason for Inquiry:</strong></label></div>
+                </div>
+                <div class="col-lg-4">
+                  <select class="form-control" id="inquiry">
+                    <option value="catering">Catering</option>
+                    <option value="private">Private Party</option>
+                    <option value="feedback">Feedback</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <!--Additional Information-->
+              <div class="form-group row" style="white-space:nowrap">
+                <div class="col-lg-4">
+                  <div style="text-align:right;"><label for="info" class="col col-form-label">Additional Information:</label></div>
+                </div>
+                <div class="col-lg-4">
+                  <textarea class="form-control" id="info" rows="5"></textarea>
+                </div>
+              </div>
+
+              <!--Have you been-->
+              <div class="form-group row" style="white-space:nowrap">
+                <div class="col-lg-4">
+                  <div style="text-align:right;"><label for="haveyou1" class="col radio-inline control-label"><strong>Have you been to the restaurant?</strong></label></div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="haveyou1" value="No" checked="">
+                    <label class="form-check-label" for="haveyou1">No</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="haveyou2" value="Yes">
+                    <label class="form-check-label" for="haveyou2">Yes</label>
+                  </div>
+                </div>
+              </div>
+
+              <!--Best days to contact-->
+              <div class="form-group row" style="white-space:nowrap">
+                <div class="col-lg-4">
+                  <div style="text-align:right;"><label for="bestdays" class="col check-inline control-label"><strong>Best days to contact you:</strong></label></div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="check1" value="monday">
+                    <label class="form-check-label" for="check1">M</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="check2" value="tuesday">
+                    <label class="form-check-label" for="check2">T</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="check3" value="wedesday">
+                    <label class="form-check-label" for="check3">W</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="check4" value="thursday">
+                    <label class="form-check-label" for="check4">Th</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="check5" value="friday">
+                    <label class="form-check-label" for="check5">F</label>
+                  </div>
+                </div>
+              </div>
+
+              <!--Submit-->
+              <div class="form-group row">
+                <div class="col">
+                  <div style="text-align:center;"><button type="submit" class="btn btn-primary mb-2">Send Request</button></div>
+                </div>
+              </div>
+
+            </form>
+          </div>
+
+        </section>
+        <hr />
+        <footer>
+          <p>101 Yum Boulevard, Asheville, North Carolina, 28803<br />
+          (828) 101-1010</p>
+        </footer>
+      </main>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>
