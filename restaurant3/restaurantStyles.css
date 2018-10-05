@@ -1,0 +1,45 @@
+/*
+Name: Vikash Patel
+Date Created: 09/30/2018
+Most Recent Revision: N/A
+*/
+
+header {
+  text-align: center;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 2em;
+  padding: 20px 1px 1px 1px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px 5px 10px 5px;
+}
+
+.nav-pills li {
+    margin-left: 10px;
+}
+
+nav a:hover {
+  font-weight: bold;
+}
+
+/* From previous restaurant site nav design
+nav a {
+  float:left;
+  margin: 15px;
+}
+
+nav a:link {
+  text-decoration: underline;
+}
+
+
+
+nav a:visited {
+  color: #e4c3ad;
+}*/
+
+.clear-float {
+  clear:both;
+}
