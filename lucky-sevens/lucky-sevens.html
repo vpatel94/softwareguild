@@ -132,8 +132,8 @@ Most Recent Revision: N/A
             "</tbody>"+
           "</table>");
 
-        // Let's the user know their initial bet was the largest amount of money that they held during the game
-        if (num_roll_max == 0)
+        // If no additional money was won, let's the user know their initial bet was the largest amount of money that they held during the game
+        if (max_bank == starting_bet)
         {
           document.getElementById("results3").innerHTML="<p>Your initial bet was the largest amount of money that you held during the game.</p>";
         }
