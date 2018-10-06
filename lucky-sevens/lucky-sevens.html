@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--
+Name: Vikash Patel
+Date Created: 10/01/2018
+Most Recent Revision: N/A
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Lucky Sevens</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <main>
+      <!--If Javascript is disabled...-->
+      <noscript style="text-align:center">
+        <div style="border: 1px solid black; padding: 10px">
+          <span style="color:red">Uh oh! Looks like your Javascript is disabled. This site requires that Javascript is enabled!</span>
+        </div>
+      </noscript>
+
+      <header><div style="text-align:center"><h1><big><strong>Lucky Sevens</strong></big></h1></div></header>
+      <br />
+
+      <section>
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <h3>Starting Bet:</h3>
+            <div style="margin-right:20px"></div>
+            <input class="form-control" type="text" id="input_bet" name="input_bet" value="$0.00" style="width:10%">
+          </div>
+          <div class="row justify-content-center">
+            <p>Note: Please enter a whole dollar amount.</p>
+          </div>
+          <br />
+          <div class="row justify-content-center">
+            <button onclick="play()" id="play" type="button"><strong>Play</strong></button>
+          </div>
+          <br />
+          <hr />
+          <div class="row justify-content-center" id="results1"></div>
+          <br />
+          <div class="row justify-content-center" id="results2"></div>
+          <br />
+          <div class="row justify-content-center" id="results3"></div>
+        </div>
+      </section>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script>
+      // Lucky Sevens code
+
+      function rollDice(numSides)
+      {
+        return Math.floor(Math.random() * numSides) + 1;
+      }
+
+      function play()
+      {
+        var input_bet = document.getElementById("input_bet").value; // input amount
+        var starting_bet = parseInt(input_bet.replace("$","")); // removes the $ (if it is entered) and converts variable to an integer
+        var bank = starting_bet; // active amount to start the game
+        var d1; // value of die 1
+        var d2; // value of die 2
+        var dice_total; // summed value of both dice
+        var num_rolls = 0; // total number of rolls during game
+        var bank_history = [starting_bet]; // array of bank amounts for each turn, index 0 being the initial amount
+        var max_bank = 0;
+        var num_roll_max = 0; // number of rolls taken when player held most money
+        var win = 4; // winning amount
+        var lose = 1; //losing amount
+
+        if (starting_bet <= 0) // gives warning if input amount not higher than $0.
+        {
+          alert("You must bet at least $1!");
+        }
+
+        else // continue with game
+        {
+          // Do this as long as loop condition holds
+          do{
+            d1 = rollDice(6);
+            d2 = rollDice(6);
+            dice_total = d1+d2;
+            num_rolls++;
+
+            if (dice_total == 7) // Wins bet
+            {
+              bank = bank + win;
+              bank_history.push(bank);
+            }
+
+            else // Loses bet
+            {
+              bank--;
+              bank_history.push(bank);
+            }
+          } while(bank>0); // Loop continues as long as bank is > 0.
+
+          max_bank = Math.max.apply(Math, bank_history); // Pulls largest bank value from the history array
+          num_roll_max = bank_history.indexOf(max_bank);
+          // The index of the largest bank value also equals the number of rolls since an amount is added for each roll
+        }
+
+        // Appends the results table to the HTML page
+        document.getElementById("results1").innerHTML="<h3>Results</h3>";
+        document.getElementById("results2").innerHTML=
+          ("<table class=\"table table-striped center\" style=\"width:40%\">"+
+            "<tbody>"+
+              "<tr>"+
+                "<td>Starting Bet:</td>"+
+                "<td style=\"text-align:right\">$"+starting_bet+"</td>"+
+              "</tr>"+
+              "<tr>"+
+                "<td>Total Rolls Before Going Broke</td>"+
+                "<td style=\"text-align:right\">"+num_rolls+"</td>"+
+              "</tr>"+
+              "<tr>"+
+                "<td>Highest Amount Won</td>"+
+                "<td style=\"text-align:right\">$"+max_bank+"</td>"+
+              "</tr>"+
+              "<tr>"+
+                "<td>Roll Count at Highest Amount Won</td>"+
+                "<td style=\"text-align:right\">"+num_roll_max+"</td>"+
+              "</tr>"+
+            "</tbody>"+
+          "</table>");
+
+        // Let's the user know their initial bet was the largest amount of money that they held during the game
+        if (num_roll_max == 0)
+        {
+          document.getElementById("results3").innerHTML="<p>Your initial bet was the largest amount of money that you held during the game.</p>";
+        }
+        else
+        {
+          document.getElementById("results3").innerHTML="";
+        }
+
+        // Add option for user to play again, replaces the original play button
+        document.getElementById("play").innerHTML="Play Again";
+
+      }
+    </script>
+  </body>
+</html>
