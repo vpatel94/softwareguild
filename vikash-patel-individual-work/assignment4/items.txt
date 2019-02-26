@@ -1,0 +1,7 @@
+Snickers::1.99::2
+Kit-Kat::1.99::2
+Reeses::1.99::2
+Poptarts::1.99::2
+Coke::1.29::2
+Sprite::1.29::2
+Gatorade::1.79::2

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>luxMD - myCare</title>
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+        <link href="css/bootstrap.css" rel="stylesheet">
+    </head>
+    <body>
+        <input type='hidden' id='global_id'/>
+        <div class="container-fluid">
+            <h1><center><strong>luxMD</strong></center></h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>myCare - Patient Portal</h2>
+                </div>
+                <div class="col-md-6">
+                    <h4 align="right" id="intro"></h4>
+                    <h5 align="right" id="editProf"></h5>
+                    <h5 align="right"><a href='home.html'>Log out</a></h5>
+                </div>
+            </div>
+            <hr/>
+            <ul class="list-group" id="errorMessages"></ul>
+            <div style="text-align:center; display: none;" id="editProfile">
+                <h2>Edit Patient Profile</h2>
+                <hr/>
+                <form class="form-horizontal" role="form" id="edit-profile-form">
+                    <div class="form-group">
+                        <label for="edit-profile-fname" class="col-md-4 control-label">
+                            First Name:
+                        </label>
+                        <div class="col-md-4">
+                            <input type="text"
+                                   class="form-control"
+                                   id="edit-profile-fname"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-profile-lname" class="col-md-4 control-label">
+                            Last Name:
+                        </label>
+                        <div class="col-md-4">
+                            <input type="text"
+                                   class="form-control"
+                                   id="edit-profile-lname"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-profile-phoneNumber" class="col-md-4 control-label">
+                            Phone Number:
+                        </label>
+                        <div class="col-md-4">
+                            <input type="text"
+                                   class="form-control"
+                                   id="edit-profile-phoneNumber"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-profile-streetAddress" class="col-md-4 control-label">
+                            Street Address:
+                        </label>
+                        <div class="col-md-4">
+                            <input type="text"
+                                   class="form-control"
+                                   id="edit-profile-streetAddress"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-profile-city" class="col-md-4 control-label">
+                            City:
+                        </label>
+                        <div class="col-md-4">
+                            <input type="text"
+                                   class="form-control"
+                                   id="edit-profile-city"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-profile-state" class="col-md-4 control-label">
+                            State:
+                        </label>
+                        <div class="col-md-4">
+                            <input type="text"
+                                   class="form-control"
+                                   id="edit-profile-state"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-profile-zipCode" class="col-md-4 control-label">
+                            Zip Code:
+                        </label>
+                        <div class="col-md-4">
+                            <input type="text"
+                                   class="form-control"
+                                   id="edit-profile-zipCode"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-3 col-md-3">
+                            <button type="button"
+                                    id="edit-profile-cancel-button"
+                                    class="btn btn-default"
+                                    onclick="hideEditProfile()">
+                                Void Changes
+                            </button>
+                        </div>
+                        <div class="col-md-3">
+                            <button type="button"
+                                    id="edit-profile-button"
+                                    class="btn btn-default">
+                                Save Profile
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+                <div class="col-md-5">
+                    <div id="createAppointment">
+                        <h2>Schedule New Appointment</h2>
+                        <hr/>
+                        <form class="form-horizontal" role="form" id="appointment-form">
+                            <div class="form-group">
+                                <label for="care-options" class="col-md-4 control-label">
+                                    What kind of Care?
+                                </label>
+                                <div class="col-md-8">
+                                    <select id="care-options" class="custom-select" style="width: 100%;" multiple>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group" id="doctor-select">
+                                <label for="doctor-options" class="col-md-4 control-label">
+                                    Select Doctor:
+                                </label>
+                                <div class="col-md-8">
+                                  <select id="doctor-options" class="custom-select" style="width: 100%;" multiple>
+                                  </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="datepicker" class="col-md-4 control-label">
+                                    Which day is best for you?
+                                </label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" id="datepicker">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="timepicker" class="col-md-4 control-label">
+                                    What time should we come?
+                                </label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" id="timepicker">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="appointment-notes" class="col-md-4 control-label">
+                                    Additional Notes:
+                                </label>
+                                <div class="col-md-8">
+                                    <input type="text"
+                                           class="form-control"
+                                           id="appointment-notes"
+                                           placeholder="Let us know what's going on"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-offset-4 col-md-8">
+                                    <button type="button"
+                                            id="create-button"
+                                            class="btn btn-default">
+                                        Create Appointment
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="editApptFormDiv" style="display: none">
+                        <h2>Reschedule Appointment</h2>
+
+                        <form class="form-horizontal" role="form" id="edit-appt-form">
+                            <div class="form-group">
+                                <label for="edit-apptId" class="col-md-4 control-label">
+                                    Appointment #
+                                </label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" id="edit-apptId" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-datepicker" class="col-md-4 control-label">
+                                    Which day is best for you?
+                                </label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" id="edit-datepicker">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-timepicker" class="col-md-4 control-label">
+                                    What time should we come?
+                                </label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" id="edit-timepicker">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-notes" class="col-md-4 control-label">
+                                    Additional Notes:
+                                </label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" id="edit-notes">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-offset-4 col-md-4">
+                                    <button type="button"
+                                            id="edit-cancel-button"
+                                            class="btn btn-default"
+                                            onclick="hideEditApptForm()">
+                                        Void Changes
+                                    </button>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="button"
+                                            id="edit-appt-button"
+                                            class="btn btn-default">
+                                        Reschedule
+                                    </button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div> <!-- End col div -->
+                <div class="col-md-7">
+                    <div id="apptsTableDiv">
+                        <h2>My Upcoming Appointments</h2>
+
+                        <table id="apptsTable" class="table table-hover">
+                            <tr>
+                                <th width="10%">Appt #</th>
+                                <th width="20%">Doctor</th>
+                                <th width="20%">Date & Time</th>
+                                <th width="15%">Amount Due</th>
+                                <th width="15%">Due Date</th>
+                                <th width="10%"></th>
+                                <th width="10%"></th>
+                            </tr>
+                            <tbody id="contentRows"></tbody>
+                        </table>
+                    </div>
+                </div> <!-- End col div -->
+            </div> <!-- End row div -->
+        </div>
+        <script src="js/jquery-2.2.4.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/myCare.js"></script>
+    </body>
+</html>

@@ -1,0 +1,10 @@
+2018-11-28 13:39:02 : Snickers VEND SUCCESSFUL | UPDATED INVENTORY: 3
+2018-11-28 13:39:46 : Snickers VEND SUCCESSFUL | UPDATED INVENTORY: 2
+2018-11-28 13:39:52 : Snickers VEND SUCCESSFUL | UPDATED INVENTORY: 1
+2018-11-28 13:40:06 : Snickers VEND SUCCESSFUL | UPDATED INVENTORY: 0
+2018-11-28 13:40:16 : vendItem: Exception: Snickers is out of stock.
+2018-11-28 13:40:33 : vendItem: Exception: Insufficient funds to purchase Reeses
+2018-11-28 13:47:32 : vendItem: Exception: Snickers is out of stock.
+2018-11-28 13:47:51 : Reeses VEND SUCCESSFUL | UPDATED INVENTORY: 49
+2018-11-28 13:48:19 : Poptarts VEND SUCCESSFUL | UPDATED INVENTORY: 49
+2018-11-28 13:48:29 : vendItem: Exception: Insufficient funds to purchase Coke

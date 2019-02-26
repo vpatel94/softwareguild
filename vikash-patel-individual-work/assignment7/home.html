@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Vending Machine</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <h1><center>Vending Machine</center></h1>
+    <hr/>
+
+    <div class="row">
+      <div class="col-md-9">
+        <br/>
+        <div class="row" id="productDiv"></div>
+      </div>
+
+      <div class="col-md-3">
+        <form role="form">
+          <h2><center>Total $ In</center></h2>
+          <div class="form-group">
+            <input class="form-control" id="inputMoney" style="text-align:center" readonly>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <button type="button" id="addDollar" class="btn btn-primary btn-block">Add Dollar</button>
+              <br/>
+              <button type="button" id="addDime" class="btn btn-primary btn-block">Add Dime</button>
+            </div>
+            <div class="col-md-6">
+              <button type="button" id="addQuarter" class="btn btn-primary btn-block">Add Quarter</button>
+              <br/>
+              <button type="button" id="addNickel" class="btn btn-primary btn-block">Add Nickel</button>
+            </div>
+          </div>
+        </form>
+
+        <br/>
+        <hr/>
+
+        <form role="form">
+          <h2><center>Messages</center></h2>
+          <div class="form-group">
+            <input class="form-control" id="message" style="text-align:center" readonly>
+          </div>
+        </form>
+        <form class="form-inline">
+          <div class="form-group">
+            <label class="col col-form-label" for="itemSelected">Item:</label>
+            <input class="form-control" id="itemSelected" style="text-align:center" readonly>
+          </div>
+        </form>
+        <br/>
+        <button id="makePurchase" class="btn btn-primary btn-block">Make Purchase</button>
+
+        <br/>
+        <hr/>
+
+        <form role="form">
+          <h2><center>Change</center></h2>
+          <div class="form-group">
+            <input class="form-control" id="change" style="text-align:center" readonly>
+          </div>
+        </form>
+        <button id="changeReturn" class="btn btn-primary btn-block">Change Return</button>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery-2.2.4.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/home.js"></script>
+</body>
+
+</html>

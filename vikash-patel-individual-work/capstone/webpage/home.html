@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>luxMD - Home</title>
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+        <link href="css/home.css" rel="stylesheet">
+        <link href="css/bootstrap.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <h1><center><strong>luxMD</strong></center></h1>
+            <br />
+            <div style="text-align:center">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <h5>Medical services brought to YOU</h5>
+                        </div>
+                        <div class="item">
+                            <h5>Personalized, patient-centered medicine starts at luxMD</h5>
+                        </div>
+                        <div class="item">
+                            <h5>An enhanced healthcare experience in your hands</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <ul class="list-group" id="errorMessages"></ul>
+            <div class="row">
+                <div class="col-md-9">
+                    <div id="content">
+                        <h2><center>About Us</center></h2>
+                        <br/>
+                        <h5>
+                            luxMD is a network of primary care doctors, nurses, physical therapists, and nutritionists who see fewer patients, allowing them to focus on
+                            delivering personalized, patient-centered medicine and preventive care. They also offer a better healthcare experience with conveniences and
+                            benefits not found in most practices today.
+                        </h5>
+                        <hr/>
+                        <h2><center>Our Services</center></h2>
+                        <h5><center>Hover over to reveal associated doctors!</center></h5>
+                        <br/>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h4><center>Primary Care</center></h4>
+                                <h5><center>$119</center></h5>
+                                <div class="cuadro_intro_hover">
+                        						<p style="text-align:center; margin-top:20px;">
+                        							  <img src="images/doctor.png" class="img-responsive" alt="">
+                        						</p>
+                        						<div class="caption">
+                        							  <div class="blur"></div>
+                        							  <div class="caption-text" id="doctorList">
+                        								    <h3 style="border-top:1px solid white; border-bottom:1px solid white; padding:5px;">Doctors:</h3>
+                        							  </div>
+                        						</div>
+                  					    </div>
+                            </div>
+                            <div class="col-md-3">
+                                <h4><center>Nurse Care</center></h4>
+                                <h5><center>$79</center></h5>
+                                <div class="cuadro_intro_hover">
+                        						<p style="text-align:center; margin-top:20px;">
+                        							  <img src="images/nurse.png" class="img-responsive" alt="">
+                        						</p>
+                        						<div class="caption">
+                        							  <div class="blur"></div>
+                        							  <div class="caption-text" id="nurseList">
+                        								    <h3 style="border-top:1px solid white; border-bottom:1px solid white; padding:5px;">Nurses:</h3>
+                        							  </div>
+                        						</div>
+                  					    </div>
+                            </div>
+                            <div class="col-md-3">
+                                <h4><center>Physical Therapy</center></h4>
+                                <h5><center>$79</center></h5>
+                                <div class="cuadro_intro_hover">
+                        						<p style="text-align:center; margin-top:20px;">
+                        							  <img src="images/physical-therapist.png" class="img-responsive" alt="">
+                        						</p>
+                        						<div class="caption">
+                        							  <div class="blur"></div>
+                        							  <div class="caption-text" id="ptList">
+                        								    <h3 style="border-top:1px solid white; border-bottom:1px solid white; padding:5px;">Physical Therapists:</h3>
+                        							  </div>
+                        						</div>
+                  					    </div>
+                            </div>
+                            <div class="col-md-3">
+                                <h4><center>Nutritional Consultation</center></h4>
+                                <h5><center>$59</center></h5>
+                                <div class="cuadro_intro_hover">
+                        						<p style="text-align:center; margin-top:20px;">
+                        							  <img src="images/nutritionist.png" class="img-responsive" alt="">
+                        						</p>
+                        						<div class="caption">
+                        							  <div class="blur"></div>
+                        							  <div class="caption-text" id="nutritionistList">
+                        								    <h3 style="border-top:1px solid white; border-bottom:1px solid white; padding:5px;">Nutritionists:</h3>
+                        							  </div>
+                        						</div>
+                  					    </div>
+                            </div>
+                        </div>
+                        <hr/>
+                    </div>
+                    <div id="registerDiv" style="display: none">
+                        <h2><center>New Patient Registration</center></h2>
+                        <br />
+                        <form class="form-horizontal" role="form" id="create-patient-form">
+                            <div class="form-group">
+                                <label for="new-fname" class="col-md-4 control-label">
+                                    First Name:
+                                </label>
+                                <div class="col-md-5">
+                                    <input type="text" class="form-control" id="new-fname" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="new-lname" class="col-md-4 control-label">
+                                    Last Name:
+                                </label>
+                                <div class="col-md-5">
+                                    <input type="text" class="form-control" id="new-lname" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="new-phoneNumber" class="col-md-4 control-label">
+                                    Phone Number:
+                                </label>
+                                <div class="col-md-5">
+                                    <input type="number" class="form-control" id="new-phoneNumber" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="new-streetAddress" class="col-md-4 control-label">
+                                    Street Address:
+                                </label>
+                                <div class="col-md-5">
+                                    <input type="text" class="form-control" id="new-streetAddress" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="new-city" class="col-md-4 control-label">
+                                    City:
+                                </label>
+                                <div class="col-md-5">
+                                    <input type="text" class="form-control" id="new-city" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="new-state" class="col-md-4 control-label">
+                                    State:
+                                </label>
+                                <div class="col-md-5">
+                                    <input type="text" class="form-control" id="new-state" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="new-zipCode" class="col-md-4 control-label">
+                                    Zip Code:
+                                </label>
+                                <div class="col-md-5">
+                                    <input type="number" class="form-control" id="new-zipCode" required>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="form-group">
+                                <div class="col-md-offset-5 col-md-2">
+                                    <button type="button"
+                                            id="edit-cancel-button"
+                                            class="btn btn-default"
+                                            onclick="hideRegisterForm()">
+                                        Cancel
+                                    </button>
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="button"
+                                            id="new-patient-button"
+                                            class="btn btn-default">
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div> <!-- End col div -->
+                <div class="col-md-3">
+                    <div id="signInDiv">
+                        <h2><center>Sign In</center></h2>
+                        <form class="form-horizontal" role="form" id="sign-in-form" style="text-align:center;" onsubmit="return redirect()">
+                            <div class="form-group">
+                                <div class="radio-inline">
+                                    <input type="radio" id="patientRadio" name="userRadio" class="custom-control-input" value="patient">
+                                    <label class="custom-control-label" for="patientRadio">Patient</label>
+                                </div>
+                                <div class="radio-inline">
+                                    <input type="radio" id="doctorRadio" name="userRadio" class="custom-control-input" value="doctor">
+                                    <label class="custom-control-label" for="doctorRadio">Doctor</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="user-id" class="col-md-3 control-label">
+                                    UserID:
+                                </label>
+                                <div class="col-md-7">
+                                    <input type="text"
+                                           class="form-control"
+                                           id="user-id"
+                                           placeholder="Patient/Doctor ID"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="col-md-3 control-label">
+                                    Password:
+                                </label>
+                                <div class="col-md-7">
+                                    <input type="password"
+                                           class="form-control"
+                                           id="password"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-offset-4 col-md-4">
+                                    <button type="submit"
+                                            id="sign-in-button"
+                                            class="btn btn-default">
+                                        Sign In
+                                    </button>
+                                </div>
+                            </div>
+                            <br />
+                            <p>New Patient?</p>
+                            <div class="form-group">
+                                <div class="col-md-offset-4 col-md-4">
+                                    <button type="button"
+                                            id="register-button"
+                                            class="btn btn-default"
+                                            onclick="showRegisterForm()">
+                                         Register
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <br />
+                </div> <!-- End col div -->
+            </div> <!-- End row div -->
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="js/jquery-2.2.4.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/home.js"></script>
+    </body>
+</html>
